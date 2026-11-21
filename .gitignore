@@ -7,6 +7,9 @@ MY_STUDY_NOTES/
 VIVA_PREPARATION/
 PERSONAL_CODE_WALKTHROUGH/
 
+# Generated documentation PDFs (kept local; rebuild with docs/tools/build_pdfs.py)
+docs/pdf/
+
 # Environment files
 .env
 .env.*

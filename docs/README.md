@@ -8,5 +8,5 @@
 | `evaluation/` | measured evaluation report + metrics JSON, pre-tuning baseline |
 | `diagrams/` | architecture, pipeline, data model and QA diagrams (SVG) |
 | `screenshots/` | real screenshots of the running app with synthetic data |
-| `pdf/` | generated PDFs |
+| `pdf/` | generated PDFs (local only, gitignored; build with `tools/build_pdfs.py`) |
 | `tools/` | `capture_screenshots.py`, `build_pdfs.py` |

@@ -70,7 +70,7 @@ cp .env.example .env      # then set MEDTRACE_ADMIN_PASSWORD (and optionally MED
 | Run the test suite (77 tests) | `python -m pytest -q` |
 | Run the evaluation and write the report | `python -m medtrace.evaluation.runner` → `docs/evaluation/EVALUATION_REPORT.md` |
 | Regenerate screenshots (server running) | `python ../docs/tools/capture_screenshots.py` |
-| Build the PDFs | `python ../docs/tools/build_pdfs.py` |
+| Build the PDFs (written to `docs/pdf/`, gitignored) | `python ../docs/tools/build_pdfs.py` |
 | API reference (interactive) | http://127.0.0.1:8000/docs |
 
 Sign in with `MEDTRACE_ADMIN_USERNAME` / `MEDTRACE_ADMIN_PASSWORD` from `.env`. If no admin password is configured, a random one is generated and printed **once** to the console on first start. If `MEDTRACE_DEMO_REVIEWER_PASSWORD` is set, the seed creates user `reviewer` with access to patients A–C only (demonstrates isolation).
@@ -131,4 +131,4 @@ Measured by `python -m medtrace.evaluation.runner` on 2026-11-21 (extractor `rul
 - **No regulatory compliance (HIPAA, GDPR, etc.) is claimed or has been assessed.** Use synthetic data only.
 
 ## Documentation
-[Technical documentation](docs/TECHNICAL_DOCUMENTATION.md) · [Architecture](docs/ARCHITECTURE.md) · [Data model](docs/DATA_MODEL.md) · [Extraction & provenance](docs/EXTRACTION_AND_PROVENANCE.md) · [Timeline & contradictions](docs/TIMELINE_AND_CONTRADICTIONS.md) · [Records QA](docs/RECORDS_QA.md) · [Security & privacy](docs/SECURITY_AND_PRIVACY.md) · [API](docs/API_DOCUMENTATION.md) · [Testing & evaluation](docs/TESTING_AND_EVALUATION.md) · [Contributing](CONTRIBUTING.md) · PDFs: [Technical documentation](docs/pdf/MedTrace_Technical_Documentation.pdf), [Project report](docs/pdf/MedTrace_Project_Report.pdf)
+[Technical documentation](docs/TECHNICAL_DOCUMENTATION.md) · [Architecture](docs/ARCHITECTURE.md) · [Data model](docs/DATA_MODEL.md) · [Extraction & provenance](docs/EXTRACTION_AND_PROVENANCE.md) · [Timeline & contradictions](docs/TIMELINE_AND_CONTRADICTIONS.md) · [Records QA](docs/RECORDS_QA.md) · [Security & privacy](docs/SECURITY_AND_PRIVACY.md) · [API](docs/API_DOCUMENTATION.md) · [Testing & evaluation](docs/TESTING_AND_EVALUATION.md) · [Contributing](CONTRIBUTING.md) · PDFs (technical documentation, project report): generated locally into `docs/pdf/` with `python docs/tools/build_pdfs.py` (not committed)
