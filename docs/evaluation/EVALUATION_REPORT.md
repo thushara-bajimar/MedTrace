@@ -1,6 +1,6 @@
 # MedTrace Evaluation Report
 
-Generated: 2026-11-21T06:20:19+00:00  
+Generated: 2026-11-21T07:04:56+00:00  
 Extractor: `rules-1.0.0`  
 Dataset: `synthetic-v1` (synthetic; 6 patients, 36 documents, 183 annotated findings, 38 questions)  
 Hold-out patients (never used to tune rules): F
@@ -161,8 +161,8 @@ Engine: RapidOCR (PP-OCR models, ONNX Runtime, local). Mean character error rate
 
 ## Processing latency (measured on this machine)
 
-- Native-text documents: median 138.1 ms (29 docs)
-- OCR documents: median 5807.3 ms (7 docs)
+- Native-text documents: median 132.4 ms (29 docs)
+- OCR documents: median 5766.8 ms (7 docs)
 
 ## Review time
 

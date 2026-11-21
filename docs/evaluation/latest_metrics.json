@@ -1445,13 +1445,13 @@
     "note": "CER compares OCR text with the known source text of each synthetic image (whitespace-normalised)."
   },
   "latency": {
-    "native_ms_median": 138.1,
-    "native_ms_mean": 141.3897,
-    "ocr_ms_median": 5807.3,
-    "ocr_ms_mean": 5989.7429,
+    "native_ms_median": 132.4,
+    "native_ms_mean": 139.3759,
+    "ocr_ms_median": 5766.8,
+    "ocr_ms_mean": 6019.3429,
     "documents_native": 29,
     "documents_ocr": 7,
-    "total_seed_seconds": 48.22
+    "total_seed_seconds": 48.36
   },
   "review_time": {
     "kind": "automated_reading_load_proxy",
@@ -1519,5 +1519,5 @@
     "note": "No human reviewer study has been performed. Use the Review-time study page to record real timed sessions."
   },
   "extractor_version": "rules-1.0.0",
-  "generated_at": "2026-11-21T06:20:19+00:00"
+  "generated_at": "2026-11-21T07:04:56+00:00"
 }

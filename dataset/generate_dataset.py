@@ -851,7 +851,7 @@ def render_native_pdf(lines) -> bytes:
                 page.insert_text((50, y), ln, fontsize=size, fontname="hebo" if i < 2 else "helv")
             y += 18 if i < 2 else 16
         page.insert_text((50, 815), FOOTER, fontsize=7, fontname="helv", color=(0.4, 0.4, 0.4))
-    return pdf.tobytes(deflate=True)
+    return pdf.write(deflate=True, no_new_id=True)  # no random trailer ID: byte-reproducible
 
 
 def render_image(page_lines, seed: int, scanned: bool) -> Image.Image:
@@ -888,7 +888,7 @@ def render_scanned_pdf(lines, seed) -> bytes:
         img.save(buf, format="JPEG", quality=80)
         page = pdf.new_page(width=595, height=842)
         page.insert_image(page.rect, stream=buf.getvalue())
-    return pdf.tobytes(deflate=True)
+    return pdf.write(deflate=True, no_new_id=True)  # no random trailer ID: byte-reproducible
 
 
 def _flatten_text(lines) -> list[list[str]]:
