@@ -1,0 +1,1 @@
+"""MedTrace backend package."""
