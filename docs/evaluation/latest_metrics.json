@@ -1,0 +1,1523 @@
+{
+  "dataset": {
+    "version": "synthetic-v1",
+    "patients": 6,
+    "holdout_patients": [
+      "F"
+    ],
+    "documents": 36,
+    "documents_by_type": {
+      "prescription": 7,
+      "lab_report": 12,
+      "consultation_note": 10,
+      "discharge_summary": 4,
+      "imaging_report": 3
+    },
+    "documents_by_format": {
+      "pdf": 29,
+      "scan_pdf": 3,
+      "png": 3,
+      "jpg": 1
+    },
+    "ground_truth_findings": 183,
+    "ground_truth_by_type": {
+      "condition": 21,
+      "allergy": 13,
+      "medication": 54,
+      "event": 45,
+      "investigation": 50
+    },
+    "questions": 38
+  },
+  "extraction": {
+    "entity": {
+      "condition": {
+        "tp": 21,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "medication": {
+        "tp": 50,
+        "fp": 0,
+        "fn": 4,
+        "precision": 1.0,
+        "recall": 0.9259,
+        "f1": 0.9615
+      },
+      "allergy": {
+        "tp": 13,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "investigation": {
+        "tp": 50,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "event": {
+        "tp": 44,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.9778,
+        "recall": 0.9778,
+        "f1": 0.9778
+      }
+    },
+    "micro": {
+      "tp": 178,
+      "fp": 1,
+      "fn": 5,
+      "precision": 0.9944,
+      "recall": 0.9727,
+      "f1": 0.9834
+    },
+    "fields": {
+      "condition": {
+        "status": {
+          "correct": 21,
+          "total": 21,
+          "accuracy": 1.0
+        },
+        "date_iso": {
+          "correct": 21,
+          "total": 21,
+          "accuracy": 1.0
+        }
+      },
+      "allergy": {
+        "assertion": {
+          "correct": 13,
+          "total": 13,
+          "accuracy": 1.0
+        },
+        "reaction": {
+          "correct": 13,
+          "total": 13,
+          "accuracy": 1.0
+        }
+      },
+      "medication": {
+        "strength": {
+          "correct": 50,
+          "total": 50,
+          "accuracy": 1.0
+        },
+        "frequency": {
+          "correct": 50,
+          "total": 50,
+          "accuracy": 1.0
+        },
+        "status": {
+          "correct": 49,
+          "total": 50,
+          "accuracy": 0.98
+        },
+        "date_iso": {
+          "correct": 50,
+          "total": 50,
+          "accuracy": 1.0
+        }
+      },
+      "event": {
+        "date_iso": {
+          "correct": 44,
+          "total": 44,
+          "accuracy": 1.0
+        }
+      },
+      "investigation": {
+        "value": {
+          "correct": 50,
+          "total": 50,
+          "accuracy": 1.0
+        },
+        "unit": {
+          "correct": 50,
+          "total": 50,
+          "accuracy": 1.0
+        },
+        "reference_range": {
+          "correct": 50,
+          "total": 50,
+          "accuracy": 1.0
+        },
+        "date_iso": {
+          "correct": 50,
+          "total": 50,
+          "accuracy": 1.0
+        }
+      }
+    },
+    "date_extraction": {
+      "correct": 165,
+      "total": 165,
+      "accuracy": 1.0
+    },
+    "medication_status": {
+      "correct": 49,
+      "total": 50,
+      "accuracy": 0.98
+    },
+    "evidence": {
+      "page_reference_accuracy": 1.0,
+      "passage_accuracy": 0.9382,
+      "source_document_accuracy": 1.0,
+      "evidence_completeness": 1.0,
+      "matched_findings": 178,
+      "predicted_findings": 179
+    },
+    "document_classification_accuracy": 1.0,
+    "document_date_accuracy": 1.0,
+    "documents": 36,
+    "errors": [
+      {
+        "doc": "F1",
+        "type": "medication",
+        "item": "omeprazole",
+        "field": "status",
+        "expected": "documented_ongoing",
+        "got": "prescribed"
+      },
+      {
+        "doc": "F1",
+        "type": "medication",
+        "item": "propranolol",
+        "field": "MISSED",
+        "expected": "Propranolol"
+      },
+      {
+        "doc": "F3",
+        "type": "medication",
+        "item": "propranolol",
+        "field": "MISSED",
+        "expected": "Propranolol"
+      },
+      {
+        "doc": "F4",
+        "type": "medication",
+        "item": "propranolol",
+        "field": "MISSED",
+        "expected": "Propranolol was withheld"
+      },
+      {
+        "doc": "F5",
+        "type": "event",
+        "item": "surgery",
+        "field": "MISSED",
+        "expected": "appendicectomy on 29 June 2024"
+      },
+      {
+        "doc": "F5",
+        "type": "medication",
+        "item": "propranolol",
+        "field": "MISSED",
+        "expected": "Propranolol restarted"
+      },
+      {
+        "doc": "F5",
+        "type": "event",
+        "item": "follow_up",
+        "field": "SPURIOUS",
+        "got": "Post-operative review after appendicectomy on 29 June 2024. Wound healed."
+      }
+    ]
+  },
+  "extraction_by_split": {
+    "development": {
+      "entity": {
+        "condition": {
+          "tp": 16,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "medication": {
+          "tp": 43,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "allergy": {
+          "tp": 10,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "investigation": {
+          "tp": 46,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "event": {
+          "tp": 36,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "micro": {
+        "tp": 151,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "fields": {
+        "condition": {
+          "status": {
+            "correct": 16,
+            "total": 16,
+            "accuracy": 1.0
+          },
+          "date_iso": {
+            "correct": 16,
+            "total": 16,
+            "accuracy": 1.0
+          }
+        },
+        "allergy": {
+          "assertion": {
+            "correct": 10,
+            "total": 10,
+            "accuracy": 1.0
+          },
+          "reaction": {
+            "correct": 10,
+            "total": 10,
+            "accuracy": 1.0
+          }
+        },
+        "medication": {
+          "strength": {
+            "correct": 43,
+            "total": 43,
+            "accuracy": 1.0
+          },
+          "frequency": {
+            "correct": 43,
+            "total": 43,
+            "accuracy": 1.0
+          },
+          "status": {
+            "correct": 43,
+            "total": 43,
+            "accuracy": 1.0
+          },
+          "date_iso": {
+            "correct": 43,
+            "total": 43,
+            "accuracy": 1.0
+          }
+        },
+        "event": {
+          "date_iso": {
+            "correct": 36,
+            "total": 36,
+            "accuracy": 1.0
+          }
+        },
+        "investigation": {
+          "value": {
+            "correct": 46,
+            "total": 46,
+            "accuracy": 1.0
+          },
+          "unit": {
+            "correct": 46,
+            "total": 46,
+            "accuracy": 1.0
+          },
+          "reference_range": {
+            "correct": 46,
+            "total": 46,
+            "accuracy": 1.0
+          },
+          "date_iso": {
+            "correct": 46,
+            "total": 46,
+            "accuracy": 1.0
+          }
+        }
+      },
+      "date_extraction": {
+        "correct": 141,
+        "total": 141,
+        "accuracy": 1.0
+      },
+      "medication_status": {
+        "correct": 43,
+        "total": 43,
+        "accuracy": 1.0
+      },
+      "evidence": {
+        "page_reference_accuracy": 1.0,
+        "passage_accuracy": 0.9404,
+        "source_document_accuracy": 1.0,
+        "evidence_completeness": 1.0,
+        "matched_findings": 151,
+        "predicted_findings": 151
+      },
+      "document_classification_accuracy": 1.0,
+      "document_date_accuracy": 1.0,
+      "documents": 31,
+      "errors": []
+    },
+    "holdout": {
+      "entity": {
+        "condition": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "medication": {
+          "tp": 7,
+          "fp": 0,
+          "fn": 4,
+          "precision": 1.0,
+          "recall": 0.6364,
+          "f1": 0.7778
+        },
+        "allergy": {
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "investigation": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "event": {
+          "tp": 8,
+          "fp": 1,
+          "fn": 1,
+          "precision": 0.8889,
+          "recall": 0.8889,
+          "f1": 0.8889
+        }
+      },
+      "micro": {
+        "tp": 27,
+        "fp": 1,
+        "fn": 5,
+        "precision": 0.9643,
+        "recall": 0.8438,
+        "f1": 0.9
+      },
+      "fields": {
+        "event": {
+          "date_iso": {
+            "correct": 8,
+            "total": 8,
+            "accuracy": 1.0
+          }
+        },
+        "condition": {
+          "status": {
+            "correct": 5,
+            "total": 5,
+            "accuracy": 1.0
+          },
+          "date_iso": {
+            "correct": 5,
+            "total": 5,
+            "accuracy": 1.0
+          }
+        },
+        "allergy": {
+          "assertion": {
+            "correct": 3,
+            "total": 3,
+            "accuracy": 1.0
+          },
+          "reaction": {
+            "correct": 3,
+            "total": 3,
+            "accuracy": 1.0
+          }
+        },
+        "medication": {
+          "strength": {
+            "correct": 7,
+            "total": 7,
+            "accuracy": 1.0
+          },
+          "frequency": {
+            "correct": 7,
+            "total": 7,
+            "accuracy": 1.0
+          },
+          "status": {
+            "correct": 6,
+            "total": 7,
+            "accuracy": 0.8571
+          },
+          "date_iso": {
+            "correct": 7,
+            "total": 7,
+            "accuracy": 1.0
+          }
+        },
+        "investigation": {
+          "value": {
+            "correct": 4,
+            "total": 4,
+            "accuracy": 1.0
+          },
+          "unit": {
+            "correct": 4,
+            "total": 4,
+            "accuracy": 1.0
+          },
+          "reference_range": {
+            "correct": 4,
+            "total": 4,
+            "accuracy": 1.0
+          },
+          "date_iso": {
+            "correct": 4,
+            "total": 4,
+            "accuracy": 1.0
+          }
+        }
+      },
+      "date_extraction": {
+        "correct": 24,
+        "total": 24,
+        "accuracy": 1.0
+      },
+      "medication_status": {
+        "correct": 6,
+        "total": 7,
+        "accuracy": 0.8571
+      },
+      "evidence": {
+        "page_reference_accuracy": 1.0,
+        "passage_accuracy": 0.9259,
+        "source_document_accuracy": 1.0,
+        "evidence_completeness": 1.0,
+        "matched_findings": 27,
+        "predicted_findings": 28
+      },
+      "document_classification_accuracy": 1.0,
+      "document_date_accuracy": 1.0,
+      "documents": 5,
+      "errors": [
+        {
+          "doc": "F1",
+          "type": "medication",
+          "item": "omeprazole",
+          "field": "status",
+          "expected": "documented_ongoing",
+          "got": "prescribed"
+        },
+        {
+          "doc": "F1",
+          "type": "medication",
+          "item": "propranolol",
+          "field": "MISSED",
+          "expected": "Propranolol"
+        },
+        {
+          "doc": "F3",
+          "type": "medication",
+          "item": "propranolol",
+          "field": "MISSED",
+          "expected": "Propranolol"
+        },
+        {
+          "doc": "F4",
+          "type": "medication",
+          "item": "propranolol",
+          "field": "MISSED",
+          "expected": "Propranolol was withheld"
+        },
+        {
+          "doc": "F5",
+          "type": "event",
+          "item": "surgery",
+          "field": "MISSED",
+          "expected": "appendicectomy on 29 June 2024"
+        },
+        {
+          "doc": "F5",
+          "type": "medication",
+          "item": "propranolol",
+          "field": "MISSED",
+          "expected": "Propranolol restarted"
+        },
+        {
+          "doc": "F5",
+          "type": "event",
+          "item": "follow_up",
+          "field": "SPURIOUS",
+          "got": "Post-operative review after appendicectomy on 29 June 2024. Wound healed."
+        }
+      ]
+    }
+  },
+  "timeline": {
+    "event_date_accuracy": 1.0,
+    "dated_items_evaluated": 125,
+    "pairwise_ordering_accuracy": 1.0,
+    "ordering_pairs": 1068,
+    "medication_chronology_accuracy": 1.0,
+    "medication_chronology_pairs": 41,
+    "historical_current_status_accuracy": 0.9286,
+    "historical_current_items": 14,
+    "missing_or_ambiguous_date_handling": 1.0,
+    "missing_or_ambiguous_items": 40,
+    "note": "Missing/ambiguous handling = share of ground-truth items without a determinable date for which MedTrace also produced no interpreted date (i.e. did not fabricate one)."
+  },
+  "duplicates": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "false_positive_rate": 0.0,
+    "negative_pairs": 87,
+    "kind_accuracy_on_labelled_pairs": 1.0,
+    "labelled_pairs": 7,
+    "predicted": [
+      {
+        "pair": [
+          "A1",
+          "A4"
+        ],
+        "kind": "similar_distinct",
+        "expected": "not_duplicate"
+      },
+      {
+        "pair": [
+          "A2",
+          "A6"
+        ],
+        "kind": "similar_distinct",
+        "expected": "not_duplicate"
+      },
+      {
+        "pair": [
+          "C1",
+          "C2"
+        ],
+        "kind": "similar_distinct",
+        "expected": "not_duplicate"
+      },
+      {
+        "pair": [
+          "C1",
+          "C3"
+        ],
+        "kind": "similar_distinct",
+        "expected": "not_duplicate"
+      },
+      {
+        "pair": [
+          "C2",
+          "C3"
+        ],
+        "kind": "similar_distinct",
+        "expected": "not_duplicate"
+      },
+      {
+        "pair": [
+          "D1",
+          "D2"
+        ],
+        "kind": "exact_duplicate",
+        "expected": "exact_duplicate"
+      },
+      {
+        "pair": [
+          "D1",
+          "D3"
+        ],
+        "kind": "near_duplicate",
+        "expected": "near_duplicate"
+      },
+      {
+        "pair": [
+          "D1",
+          "D4"
+        ],
+        "kind": "similar_distinct",
+        "expected": "similar_distinct"
+      },
+      {
+        "pair": [
+          "D2",
+          "D3"
+        ],
+        "kind": "near_duplicate",
+        "expected": "near_duplicate"
+      },
+      {
+        "pair": [
+          "D2",
+          "D4"
+        ],
+        "kind": "similar_distinct",
+        "expected": "similar_distinct"
+      },
+      {
+        "pair": [
+          "D3",
+          "D4"
+        ],
+        "kind": "similar_distinct",
+        "expected": "similar_distinct"
+      },
+      {
+        "pair": [
+          "D5",
+          "D6"
+        ],
+        "kind": "near_duplicate",
+        "expected": "near_duplicate"
+      }
+    ],
+    "missed": []
+  },
+  "conflicts": {
+    "tp": 7,
+    "fp": 0,
+    "fn": 1,
+    "precision": 1.0,
+    "recall": 0.875,
+    "f1": 0.9333,
+    "false_positives": [],
+    "missed_conflicts": [
+      [
+        "event_date",
+        [
+          "F4",
+          "F5"
+        ]
+      ]
+    ],
+    "negative_controls_flagged": [],
+    "development_recall": {
+      "detected": 5,
+      "total": 5,
+      "recall": 1.0
+    },
+    "holdout_recall": {
+      "detected": 2,
+      "total": 3,
+      "recall": 0.6667
+    },
+    "auto_resolved": 0,
+    "note": "Conflicts are never auto-resolved; auto_resolved is structurally 0 (no code path changes status)."
+  },
+  "qa": {
+    "questions": 38,
+    "overall_accuracy": 0.9474,
+    "status_accuracy": 1.0,
+    "evidence_supported_answer_accuracy": 0.9583,
+    "citation_accuracy": 0.9231,
+    "abstention_accuracy": 1.0,
+    "unsupported_answer_rate": 0.0,
+    "over_abstention_rate": 0.0,
+    "missing_evidence_detection": 1.0,
+    "cross_patient_citation_rate": 0.0,
+    "development_accuracy": 1.0,
+    "holdout_accuracy": 0.6,
+    "results": [
+      {
+        "patient": "A",
+        "question": "Which medications are documented in the uploaded records?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "A1",
+          "A3",
+          "A4",
+          "A5"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "A",
+        "question": "Were any medication changes documented?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "A3",
+          "A4",
+          "A5"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "A",
+        "question": "When was the last laboratory test documented?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "A6"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "A",
+        "question": "What medications were documented in the discharge summary?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "A5"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "A",
+        "question": "What was the HbA1c?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "A2",
+          "A6"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "A",
+        "question": "When was the patient admitted?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "A5"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "A",
+        "question": "Should the patient increase the metformin dose?",
+        "expected": "decline",
+        "got": "decline",
+        "status": "declined_clinical_advice",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "A1",
+          "A3",
+          "A4",
+          "A5"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "A",
+        "question": "Is the HbA1c of 8.4 normal?",
+        "expected": "decline",
+        "got": "decline",
+        "status": "declined_clinical_judgement",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "A2",
+          "A6"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "A",
+        "question": "What is the patient's blood group?",
+        "expected": "abstain",
+        "got": "abstain",
+        "status": "abstained_no_evidence",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "A",
+        "question": "Why was glimepiride stopped?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "A3"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "B",
+        "question": "Which allergy statements appear in the records?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered_with_conflicts",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "B1",
+          "B2",
+          "B3"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "B",
+        "question": "Is the patient allergic to penicillin?",
+        "expected": "abstain",
+        "got": "abstain",
+        "status": "abstained_conflict",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "B1",
+          "B2",
+          "B3"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "B",
+        "question": "Are there conflicting statements about allergies?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered_with_conflicts",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "B1",
+          "B2",
+          "B3"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "B",
+        "question": "Was montelukast stopped?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "B5"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "B",
+        "question": "What investigations are recorded?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "B4",
+          "B6"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "B",
+        "question": "What treatment should she get for asthma?",
+        "expected": "decline",
+        "got": "decline",
+        "status": "declined_clinical_advice",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "B1",
+          "B3"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "C",
+        "question": "What creatinine values are documented?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "C1",
+          "C2"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "C",
+        "question": "Which documents mention chronic kidney disease?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "C4"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "C",
+        "question": "What glucose results are recorded?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "C1",
+          "C2"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "C",
+        "question": "Does the patient have diabetes?",
+        "expected": "decline",
+        "got": "decline",
+        "status": "declined_clinical_judgement",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "C",
+        "question": "Will the kidney disease get worse?",
+        "expected": "decline",
+        "got": "decline",
+        "status": "declined_unsupported_inference",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "D",
+        "question": "What LDL cholesterol values are documented?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered_with_conflicts",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "D1",
+          "D2",
+          "D3",
+          "D4"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "D",
+        "question": "What was the LDL cholesterol on 3 October 2023?",
+        "expected": "abstain",
+        "got": "abstain",
+        "status": "abstained_conflict",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "D1",
+          "D2",
+          "D3"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "D",
+        "question": "Which allergy statements appear in the records?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "D5",
+          "D6"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "D",
+        "question": "Were any medication changes documented?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "D7"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "E",
+        "question": "What dose of levothyroxine is documented?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "E1",
+          "E2",
+          "E4",
+          "E6"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "E",
+        "question": "Which allergy statements appear in the records?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "E1"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "E",
+        "question": "When was the patient discharged?",
+        "expected": "abstain",
+        "got": "abstain",
+        "status": "abstained_not_established",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "E4"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "E",
+        "question": "When was the thyroid test done?",
+        "expected": "abstain",
+        "got": "abstain",
+        "status": "abstained_ambiguous_date",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "E3"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "E",
+        "question": "What information is missing from the records?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "E1",
+          "E2",
+          "E3",
+          "E4",
+          "E5"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "E",
+        "question": "What medications is the patient currently taking?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "E1",
+          "E6"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "E",
+        "question": "What is the patient's weight?",
+        "expected": "abstain",
+        "got": "abstain",
+        "status": "abstained_no_evidence",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "E",
+        "question": "Can she stop levothyroxine?",
+        "expected": "decline",
+        "got": "decline",
+        "status": "declined_clinical_advice",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "E1",
+          "E2",
+          "E4",
+          "E6"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": false
+      },
+      {
+        "patient": "F",
+        "question": "Which allergy statements appear in the records?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered_with_conflicts",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "F1",
+          "F4",
+          "F5"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": true
+      },
+      {
+        "patient": "F",
+        "question": "When was the appendicectomy performed?",
+        "expected": "abstain",
+        "got": "abstain",
+        "status": "abstained_no_evidence",
+        "status_correct": true,
+        "citations_ok": false,
+        "content_ok": true,
+        "cited": [],
+        "cross_patient_citations": [],
+        "correct": false,
+        "holdout": true
+      },
+      {
+        "patient": "F",
+        "question": "Were any medication changes documented?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": false,
+        "content_ok": false,
+        "cited": [
+          "F3"
+        ],
+        "cross_patient_citations": [],
+        "correct": false,
+        "holdout": true
+      },
+      {
+        "patient": "F",
+        "question": "What haemoglobin values are documented?",
+        "expected": "answer",
+        "got": "answer",
+        "status": "answered",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "F2"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": true
+      },
+      {
+        "patient": "F",
+        "question": "Is the vitamin B12 low?",
+        "expected": "decline",
+        "got": "decline",
+        "status": "declined_clinical_judgement",
+        "status_correct": true,
+        "citations_ok": true,
+        "content_ok": true,
+        "cited": [
+          "F2"
+        ],
+        "cross_patient_citations": [],
+        "correct": true,
+        "holdout": true
+      }
+    ]
+  },
+  "ocr": {
+    "documents": [
+      {
+        "doc": "A4",
+        "format": "scan_pdf",
+        "engine_mean_confidence": 0.9862,
+        "character_error_rate": 0.0964
+      },
+      {
+        "doc": "A6",
+        "format": "png",
+        "engine_mean_confidence": 0.996,
+        "character_error_rate": 0.0
+      },
+      {
+        "doc": "B5",
+        "format": "jpg",
+        "engine_mean_confidence": 0.9924,
+        "character_error_rate": 0.0664
+      },
+      {
+        "doc": "D6",
+        "format": "scan_pdf",
+        "engine_mean_confidence": 0.9893,
+        "character_error_rate": 0.0144
+      },
+      {
+        "doc": "E4",
+        "format": "scan_pdf",
+        "engine_mean_confidence": 0.9886,
+        "character_error_rate": 0.0769
+      },
+      {
+        "doc": "E6",
+        "format": "png",
+        "engine_mean_confidence": 0.9913,
+        "character_error_rate": 0.0
+      },
+      {
+        "doc": "F3",
+        "format": "png",
+        "engine_mean_confidence": 0.9931,
+        "character_error_rate": 0.0
+      }
+    ],
+    "mean_character_error_rate": 0.0363,
+    "mean_engine_confidence": 0.991,
+    "engine": "RapidOCR (PP-OCR models, ONNX Runtime, local)",
+    "note": "CER compares OCR text with the known source text of each synthetic image (whitespace-normalised)."
+  },
+  "latency": {
+    "native_ms_median": 138.1,
+    "native_ms_mean": 141.3897,
+    "ocr_ms_median": 5807.3,
+    "ocr_ms_mean": 5989.7429,
+    "documents_native": 29,
+    "documents_ocr": 7,
+    "total_seed_seconds": 48.22
+  },
+  "review_time": {
+    "kind": "automated_reading_load_proxy",
+    "is_human_study": false,
+    "assumptions": {
+      "reading_wpm": 200,
+      "seconds_per_document_open": 10,
+      "seconds_per_fact_check": 6,
+      "fact_spot_check_share": 0.25
+    },
+    "per_patient": [
+      {
+        "patient": "A",
+        "documents": 6,
+        "raw_words": 439,
+        "structured_words": 316,
+        "baseline_seconds_estimate": 191.7,
+        "medtrace_seconds_estimate": 130.8
+      },
+      {
+        "patient": "B",
+        "documents": 6,
+        "raw_words": 300,
+        "structured_words": 244,
+        "baseline_seconds_estimate": 150.0,
+        "medtrace_seconds_estimate": 101.7
+      },
+      {
+        "patient": "C",
+        "documents": 6,
+        "raw_words": 283,
+        "structured_words": 240,
+        "baseline_seconds_estimate": 144.9,
+        "medtrace_seconds_estimate": 100.5
+      },
+      {
+        "patient": "D",
+        "documents": 7,
+        "raw_words": 338,
+        "structured_words": 273,
+        "baseline_seconds_estimate": 171.4,
+        "medtrace_seconds_estimate": 117.9
+      },
+      {
+        "patient": "E",
+        "documents": 6,
+        "raw_words": 237,
+        "structured_words": 144,
+        "baseline_seconds_estimate": 131.1,
+        "medtrace_seconds_estimate": 62.7
+      },
+      {
+        "patient": "F",
+        "documents": 5,
+        "raw_words": 259,
+        "structured_words": 184,
+        "baseline_seconds_estimate": 127.7,
+        "medtrace_seconds_estimate": 76.2
+      }
+    ],
+    "baseline_total_seconds_estimate": 916.8,
+    "medtrace_total_seconds_estimate": 589.8,
+    "estimated_reduction": 0.3567,
+    "human_sessions_recorded": 0,
+    "note": "No human reviewer study has been performed. Use the Review-time study page to record real timed sessions."
+  },
+  "extractor_version": "rules-1.0.0",
+  "generated_at": "2026-11-21T06:20:19+00:00"
+}

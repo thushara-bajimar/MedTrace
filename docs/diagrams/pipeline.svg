@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 300" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#475569"/></marker></defs>
+<rect width="980" height="300" fill="#fff"/>
+<text x="490" y="28" text-anchor="middle" font-size="17" font-weight="600" fill="#0f172a">Document processing pipeline</text>
+<g stroke="#1f8a83" fill="#eef7f6">
+<rect x="15" y="55" width="105" height="70" rx="8"/><rect x="135" y="55" width="105" height="70" rx="8"/><rect x="255" y="55" width="105" height="70" rx="8"/><rect x="375" y="55" width="105" height="70" rx="8"/><rect x="495" y="55" width="105" height="70" rx="8"/>
+<rect x="615" y="55" width="105" height="70" rx="8"/><rect x="735" y="55" width="105" height="70" rx="8"/><rect x="855" y="55" width="110" height="70" rx="8"/>
+</g>
+<g text-anchor="middle" fill="#0f172a" font-weight="600"><text x="67" y="83">Upload</text><text x="187" y="83">Validation</text><text x="307" y="83">Patient</text><text x="427" y="83">Text / OCR</text><text x="547" y="83">Classify</text><text x="667" y="83">Extract</text><text x="787" y="83">Verify</text><text x="910" y="83">Analyse</text></g>
+<g text-anchor="middle" fill="#475569" font-size="10.5"><text x="67" y="101">multipart, size cap</text><text x="187" y="101">ext + magic bytes</text><text x="307" y="101">association</text><text x="427" y="101">PyMuPDF lines;</text><text x="547" y="101">weighted cues</text><text x="667" y="101">rules + lexicons</text><text x="787" y="101">span must exist</text><text x="910" y="101">duplicates,</text>
+<text x="67" y="115">streamed to disk</text><text x="187" y="115">no JS / launch</text><text x="307" y="115">UUID storage</text><text x="427" y="115">OCR if no text</text><text x="547" y="115">+ confidence</text><text x="667" y="115">dates, units</text><text x="787" y="115">in cited line</text><text x="910" y="115">conflicts, gaps</text></g>
+<g stroke="#475569" stroke-width="1.5" marker-end="url(#a)"><line x1="120" y1="90" x2="133" y2="90"/><line x1="240" y1="90" x2="253" y2="90"/><line x1="360" y1="90" x2="373" y2="90"/><line x1="480" y1="90" x2="493" y2="90"/><line x1="600" y1="90" x2="613" y2="90"/><line x1="720" y1="90" x2="733" y2="90"/><line x1="840" y1="90" x2="853" y2="90"/></g>
+<rect x="255" y="170" width="470" height="95" rx="8" fill="#f8fafc" stroke="#94a3b8"/>
+<text x="490" y="192" text-anchor="middle" font-weight="600">Stored per finding (append-only)</text>
+<text x="490" y="212" text-anchor="middle" fill="#334155">document · page · line range · bounding box · verbatim passage · extracted span</text>
+<text x="490" y="230" text-anchor="middle" fill="#334155">date as written + parsed date only when unambiguous · confidence + reasons</text>
+<text x="490" y="248" text-anchor="middle" fill="#334155">version 1 = machine extraction (immutable); reviewers add versions</text>
+<line x1="667" y1="125" x2="620" y2="168" stroke="#475569" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="760" y="170" width="205" height="95" rx="8" fill="#eff6ff" stroke="#2a78d6"/>
+<text x="862" y="195" text-anchor="middle" font-weight="600">Timeline integration</text>
+<text x="862" y="215" text-anchor="middle" fill="#334155">derived on read from current</text><text x="862" y="232" text-anchor="middle" fill="#334155">finding versions - always</text><text x="862" y="249" text-anchor="middle" fill="#334155">consistent with evidence</text>
+<line x1="910" y1="125" x2="880" y2="168" stroke="#475569" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="20" y="215" fill="#475569" font-size="11">Rejected uploads never</text><text x="20" y="231" fill="#475569" font-size="11">reach storage; every stage</text><text x="20" y="247" fill="#475569" font-size="11">is timed in processing_runs.</text>
+</svg>

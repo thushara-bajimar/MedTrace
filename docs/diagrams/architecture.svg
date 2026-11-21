@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#475569"/></marker></defs>
+<rect width="960" height="560" fill="#ffffff"/>
+<text x="480" y="30" text-anchor="middle" font-size="18" font-weight="600" fill="#0f172a">MedTrace - system architecture (single machine, local processing)</text>
+<rect x="30" y="60" width="260" height="440" rx="10" fill="#eef7f6" stroke="#1f8a83"/>
+<text x="160" y="85" text-anchor="middle" font-weight="600" fill="#135c57">Browser - React SPA</text>
+<g fill="#ffffff" stroke="#a9d8d4"><rect x="50" y="100" width="220" height="30" rx="5"/><rect x="50" y="138" width="220" height="30" rx="5"/><rect x="50" y="176" width="220" height="30" rx="5"/><rect x="50" y="214" width="220" height="30" rx="5"/><rect x="50" y="252" width="220" height="30" rx="5"/><rect x="50" y="290" width="220" height="30" rx="5"/><rect x="50" y="328" width="220" height="30" rx="5"/><rect x="50" y="366" width="220" height="30" rx="5"/><rect x="50" y="404" width="220" height="30" rx="5"/><rect x="50" y="442" width="220" height="30" rx="5"/></g>
+<g fill="#0f172a" text-anchor="middle"><text x="160" y="120">Dashboard / Patients</text><text x="160" y="158">Document library + viewer</text><text x="160" y="196">Timeline</text><text x="160" y="234">Medications / Allergies / Labs</text><text x="160" y="272">Evidence viewer + corrections</text><text x="160" y="310">Contradiction centre</text><text x="160" y="348">Duplicates / Review centre</text><text x="160" y="386">Records-only questions</text><text x="160" y="424">Evaluation dashboard</text><text x="160" y="462">Review-time study / Admin</text></g>
+<rect x="350" y="60" width="300" height="440" rx="10" fill="#f8fafc" stroke="#64748b"/>
+<text x="500" y="85" text-anchor="middle" font-weight="600" fill="#0f172a">FastAPI backend (Python)</text>
+<rect x="370" y="100" width="260" height="44" rx="6" fill="#fff7ed" stroke="#f59e0b"/><text x="500" y="118" text-anchor="middle" font-weight="600">Security middleware</text><text x="500" y="135" text-anchor="middle" font-size="11" fill="#475569">session cookie · CSRF header · CSP · patient scoping</text>
+<rect x="370" y="154" width="260" height="62" rx="6" fill="#ffffff" stroke="#94a3b8"/><text x="500" y="173" text-anchor="middle" font-weight="600">Ingestion pipeline</text><text x="500" y="190" text-anchor="middle" font-size="11" fill="#475569">validate → PyMuPDF text / RapidOCR → classify</text><text x="500" y="205" text-anchor="middle" font-size="11" fill="#475569">→ rules extraction → evidence verification</text>
+<rect x="370" y="226" width="260" height="44" rx="6" fill="#ffffff" stroke="#94a3b8"/><text x="500" y="244" text-anchor="middle" font-weight="600">Analysis</text><text x="500" y="261" text-anchor="middle" font-size="11" fill="#475569">duplicates · contradictions · gaps</text>
+<rect x="370" y="280" width="260" height="44" rx="6" fill="#ffffff" stroke="#94a3b8"/><text x="500" y="298" text-anchor="middle" font-weight="600">Read-side views</text><text x="500" y="315" text-anchor="middle" font-size="11" fill="#475569">timeline · medication history · allergy summary</text>
+<rect x="370" y="334" width="260" height="44" rx="6" fill="#ffffff" stroke="#94a3b8"/><text x="500" y="352" text-anchor="middle" font-weight="600">Review &amp; corrections</text><text x="500" y="369" text-anchor="middle" font-size="11" fill="#475569">append-only finding versions</text>
+<rect x="370" y="388" width="260" height="44" rx="6" fill="#ffffff" stroke="#94a3b8"/><text x="500" y="406" text-anchor="middle" font-weight="600">Records-only QA engine</text><text x="500" y="423" text-anchor="middle" font-size="11" fill="#475569">boundary check · BM25 + structured retrieval</text>
+<rect x="370" y="442" width="260" height="44" rx="6" fill="#ffffff" stroke="#94a3b8"/><text x="500" y="460" text-anchor="middle" font-weight="600">Evaluation runner</text><text x="500" y="477" text-anchor="middle" font-size="11" fill="#475569">isolated temp DB vs ground truth</text>
+<rect x="710" y="60" width="220" height="200" rx="10" fill="#eff6ff" stroke="#2a78d6"/>
+<text x="820" y="85" text-anchor="middle" font-weight="600" fill="#1c5cab">SQLite (WAL)</text>
+<g font-size="11" fill="#0f172a" text-anchor="middle"><text x="820" y="108">users · sessions · patient_access</text><text x="820" y="126">patients · documents · pages · lines</text><text x="820" y="144">findings · finding_versions</text><text x="820" y="162">*_details (typed attributes)</text><text x="820" y="180">conflicts · resolutions</text><text x="820" y="198">duplicate_candidates · gaps</text><text x="820" y="216">qa_logs · evaluation_runs</text><text x="820" y="234">review_sessions · access_logs</text></g>
+<rect x="710" y="290" width="220" height="90" rx="10" fill="#f5f3ff" stroke="#7c3aed"/>
+<text x="820" y="315" text-anchor="middle" font-weight="600" fill="#5b21b6">File storage</text>
+<text x="820" y="337" text-anchor="middle" font-size="11">uploads/&lt;patient&gt;/&lt;doc-uuid&gt;.pdf</text><text x="820" y="355" text-anchor="middle" font-size="11">cache/&lt;patient&gt;/page renders</text>
+<rect x="710" y="410" width="220" height="90" rx="10" fill="#f0fdf4" stroke="#16a34a"/>
+<text x="820" y="435" text-anchor="middle" font-weight="600" fill="#166534">Local models only</text>
+<text x="820" y="457" text-anchor="middle" font-size="11">RapidOCR (PP-OCR, ONNX)</text><text x="820" y="475" text-anchor="middle" font-size="11">no external API calls</text>
+<line x1="290" y1="280" x2="368" y2="122" stroke="#475569" stroke-width="1.6" marker-end="url(#a)"/>
+<text x="300" y="196" font-size="11" fill="#475569" transform="rotate(-62 300 196)">HTTPS/JSON /api/*</text>
+<line x1="630" y1="185" x2="708" y2="160" stroke="#475569" stroke-width="1.6" marker-end="url(#a)"/>
+<line x1="630" y1="300" x2="708" y2="200" stroke="#475569" stroke-width="1.6" marker-end="url(#a)"/>
+<line x1="630" y1="175" x2="708" y2="330" stroke="#475569" stroke-width="1.6" marker-end="url(#a)"/>
+<line x1="630" y1="195" x2="708" y2="450" stroke="#475569" stroke-width="1.6" marker-end="url(#a)"/>
+<text x="480" y="535" text-anchor="middle" font-size="12" fill="#475569">Patient isolation is enforced in the backend for every route; the SPA is never trusted for scoping.</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 330" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#475569"/></marker></defs>
+<rect width="960" height="330" fill="#fff"/>
+<text x="480" y="28" text-anchor="middle" font-size="17" font-weight="600">Records-only question answering</text>
+<g stroke="#64748b" fill="#f8fafc"><rect x="20" y="60" width="130" height="60" rx="8"/><rect x="190" y="60" width="160" height="60" rx="8"/><rect x="390" y="60" width="160" height="60" rx="8"/><rect x="590" y="60" width="160" height="60" rx="8"/><rect x="790" y="60" width="150" height="60" rx="8"/></g>
+<g text-anchor="middle" font-weight="600"><text x="85" y="86">Question</text><text x="270" y="86">Boundary check</text><text x="470" y="86">Intent + entities</text><text x="670" y="86">Retrieval</text><text x="865" y="86">Compose</text></g>
+<g text-anchor="middle" fill="#475569" font-size="10.5"><text x="85" y="104">this patient only</text><text x="270" y="104">advice / diagnosis / speculation</text><text x="470" y="104">meds, tests, dates, doc type</text><text x="670" y="104">structured findings + BM25</text><text x="865" y="104">templated facts + citations</text></g>
+<g stroke="#475569" stroke-width="1.5" marker-end="url(#a)"><line x1="150" y1="90" x2="188" y2="90"/><line x1="350" y1="90" x2="388" y2="90"/><line x1="550" y1="90" x2="588" y2="90"/><line x1="750" y1="90" x2="788" y2="90"/></g>
+<rect x="190" y="170" width="160" height="56" rx="8" fill="#f5f3ff" stroke="#7c3aed"/><text x="270" y="194" text-anchor="middle" font-weight="600" fill="#5b21b6">Declined</text><text x="270" y="212" text-anchor="middle" font-size="10.5" fill="#475569">+ documented mentions only</text>
+<line x1="270" y1="120" x2="270" y2="168" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="590" y="170" width="350" height="120" rx="8" fill="#fef2f2" stroke="#dc2626"/>
+<text x="765" y="192" text-anchor="middle" font-weight="600" fill="#991b1b">Abstention rules</text>
+<g font-size="11" fill="#334155"><text x="605" y="214">• no evidence → "I could not find this information…"</text><text x="605" y="232">• determination question + conflict → "conflicting statements…"</text><text x="605" y="250">• "when" + only ambiguous/missing dates → date abstention</text><text x="605" y="268">• "current" use not explicitly documented → not established</text><text x="605" y="286">• weak keyword matches (&lt; 60% term coverage) are dropped</text></g>
+<line x1="865" y1="120" x2="830" y2="168" stroke="#dc2626" stroke-width="1.5" marker-end="url(#a)"/>
+<text x="20" y="250" font-size="11" fill="#475569">No language model generates answer text.</text><text x="20" y="268" font-size="11" fill="#475569">Every statement is a stored finding or a</text><text x="20" y="286" font-size="11" fill="#475569">verbatim line, so document text cannot act as</text><text x="20" y="304" font-size="11" fill="#475569">an instruction (prompt-injection resistant).</text>
+</svg>

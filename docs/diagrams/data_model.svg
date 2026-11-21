@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#475569"/></marker></defs>
+<rect width="960" height="520" fill="#fff"/>
+<text x="480" y="28" text-anchor="middle" font-size="17" font-weight="600">Core data model (simplified ERD)</text>
+<g fill="#ffffff" stroke="#64748b">
+<rect x="30" y="60" width="170" height="90" rx="6"/><rect x="30" y="200" width="170" height="70" rx="6"/>
+<rect x="270" y="60" width="190" height="120" rx="6"/><rect x="270" y="230" width="190" height="70" rx="6"/><rect x="270" y="340" width="190" height="60" rx="6"/>
+<rect x="530" y="60" width="200" height="150" rx="6"/><rect x="530" y="260" width="200" height="80" rx="6"/>
+<rect x="790" y="60" width="150" height="190" rx="6"/><rect x="530" y="390" width="200" height="80" rx="6"/><rect x="790" y="300" width="150" height="80" rx="6"/><rect x="790" y="410" width="150" height="70" rx="6"/>
+</g>
+<g font-weight="600" fill="#0f172a"><text x="40" y="80">patients</text><text x="40" y="220">users · patient_access</text><text x="280" y="80">documents</text><text x="280" y="250">document_pages</text><text x="280" y="360">page_lines</text><text x="540" y="80">findings (evidence)</text><text x="540" y="280">finding_versions</text><text x="800" y="80">*_details</text><text x="540" y="410">conflicts</text><text x="800" y="320">duplicate_candidates</text><text x="800" y="430">gaps</text></g>
+<g fill="#475569" font-size="11">
+<text x="40" y="100">id, display_name</text><text x="40" y="116">synthetic_label, is_synthetic</text><text x="40" y="132">created_by</text>
+<text x="40" y="240">role: admin/reviewer/viewer</text><text x="40" y="256">permission: read/write</text>
+<text x="280" y="100">patient_id FK, sha256</text><text x="280" y="116">doc_type (+ original)</text><text x="280" y="132">document_date_text / iso / status</text><text x="280" y="148">ocr_status, text_source_summary</text><text x="280" y="164">injection_flags</text>
+<text x="280" y="270">text + original_text</text><text x="280" y="286">text_source (native/ocr/human)</text>
+<text x="280" y="380">text + bbox + OCR confidence</text>
+<text x="540" y="100">patient_id, document_id FK</text><text x="540" y="116">page, line_start/end</text><text x="540" y="132">source_passage, original_text</text><text x="540" y="148">date_text, date_iso, date_status</text><text x="540" y="164">confidence + reasons</text><text x="540" y="180">verification, provenance_type</text><text x="540" y="196">temporal_status, is_active</text>
+<text x="540" y="300">version, origin machine/human</text><text x="540" y="316">data_json, reason, reviewer</text>
+<text x="800" y="100">condition_details</text><text x="800" y="120">medication_details</text><text x="800" y="140">allergy_details</text><text x="800" y="160">investigation_details</text><text x="800" y="180">event_details</text><text x="800" y="205">(current version,</text><text x="800" y="221">typed querying)</text>
+<text x="540" y="430">category, evidence_json</text><text x="540" y="446">status + conflict_resolutions</text><text x="540" y="462">conflict_findings (M:N)</text>
+<text x="800" y="340">level document/finding</text><text x="800" y="356">kind, review_status</text>
+<text x="800" y="450">derived documentation gaps</text>
+</g>
+<g stroke="#475569" stroke-width="1.4" marker-end="url(#a)" fill="none">
+<line x1="200" y1="105" x2="268" y2="110"/><line x1="115" y1="200" x2="115" y2="152"/><line x1="365" y1="180" x2="365" y2="228"/><line x1="365" y1="300" x2="365" y2="338"/>
+<line x1="460" y1="120" x2="528" y2="125"/><line x1="630" y1="210" x2="630" y2="258"/><line x1="730" y1="130" x2="788" y2="140"/><line x1="630" y1="388" x2="630" y2="342"/>
+<line x1="730" y1="190" x2="840" y2="298"/><line x1="730" y1="200" x2="830" y2="408"/>
+</g>
+<text x="480" y="505" text-anchor="middle" fill="#475569">Every row below patients carries patient_id; ON DELETE CASCADE removes a synthetic patient's whole record space.</text>
+</svg>
